@@ -108,10 +108,10 @@ php generate.php --output=/path/to/metrics/index.html
 Example cron job (runs every 15 minutes):
 
 ```bash
-*/15 * * * * cd /path/to/metrics/ && \
-/bin/php /path/to/redcap_metrics_dashboard/generate.php > index_tmp.html && \
-mv -f index_tmp.html index.html && \
-chown root:apache index.html && chmod 640 index.html
+*/15 * * * * cd /path/to/metrics && \
+/bin/php /path/to/redcap_metrics_dashboard/generate.php > index.html.tmp && \
+mv -f index.html.tmp index.html && \
+chown root:apache index.html && chmod 0640 index.html
 ```
 
 ### What this does
